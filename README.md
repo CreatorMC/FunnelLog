@@ -41,6 +41,30 @@
     }
 ```
 
+### 自己实现限流
+
+作为扩展，您可以自己实现 `LimitService` 接口中的方法，自己定义一个限流方法类。这样，您可以不局限于使用 `RateLimiter`，还可以使用任何其他的中间件，甚至是您自己实现的限流！
+
+只需在 `yml` 文件中如下配置：
+
+```yml
+funnellog:
+  limit:
+    # 您自己实现的类的全类名
+    clazz: com.creator.service.impl.MyLimitServiceImpl
+```
+
+对应的类：
+
+```java
+public class MyLimitServiceImpl implements LimitService {
+    @Override
+    public Object access(ProceedingJoinPoint joinPoint, Method method, DoRateLimiter doRateLimiter, Object[] args) throws Throwable {
+        // TODO
+    }
+}
+```
+
 # 效果
 
 ## 日志
