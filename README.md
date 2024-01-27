@@ -29,6 +29,8 @@
 
 在要限流的方法上添加 `@DoRateLimiter(permitsPerSecond = 1.0, returnJson = "JSON 对象")` 注解。
 
+**注意：JSON 需要是方法返回对象的 JSON 形式！**
+
 ```java
     @DoRateLimiter(permitsPerSecond = 1.0, returnJson =
             "{" +
