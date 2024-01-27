@@ -6,6 +6,8 @@
 
 按照规范打包为 SpringBootStarter。
 
+日志使用 `SLF4J`，限流使用 `RateLimiter`。
+
 # 使用
 
 ## 安装
